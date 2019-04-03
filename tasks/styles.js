@@ -6,11 +6,13 @@ import stylint from 'gulp-stylint';
 import stylus from 'gulp-stylus';
 import importIfExist from 'stylus-import-if-exist';
 import autoprefixer from 'autoprefixer-stylus';
-import gcmq from 'gulp-group-css-media-queries';
+//import gcmq from 'gulp-group-css-media-queries';
 import nano from 'gulp-cssnano';
 import rename from 'gulp-rename';
 import sourcemaps from 'gulp-sourcemaps';
 import errorHandler from 'gulp-plumber-error-handler';
+import insert from 'gulp-insert';
+import gfi from 'gulp-file-insert';
 
 const isDebug = process.env.NODE_ENV !== 'production';
 
@@ -30,11 +32,16 @@ gulp.task('styles', () => (
 				'__DEV__': isDebug
 			}
 		}))
-		.pipe(gulpIf(!isDebug, gcmq()))
+		//.pipe(gulpIf(!isDebug, gcmq()))
 		.pipe(gulpIf(!isDebug, nano({zindex: false})))
-		.pipe(rename({suffix: '.min'}))
+		//.pipe(rename({suffix: '.min'}))
 		.pipe(gulpIf(isDebug, sourcemaps.write()))
-		.pipe(gulp.dest('dist/assets/styles'))
+		.pipe(insert.prepend('/*Comments*/'))
+  		.pipe(gfi({
+    			"/*Comments*/": "app/styles/helpers/style-header",
+  		}))
+		.pipe(rename('style.css'))
+		.pipe(gulp.dest('dist'))
 ));
 
 gulp.task('styles:lint', () => (

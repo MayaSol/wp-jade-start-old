@@ -22,9 +22,18 @@ gulp.task('default', () => (
 
 gulp.task('build', () => (
 	runSequence(
+		'clean',
 		'styles:dependencies',
 		'scripts',
 		'copy',
+		'copy:php',
 		'templates'
+	)
+));
+
+gulp.task('deploy', () => (
+	runSequence(
+		'clean:remote',
+		'deploy'
 	)
 ));

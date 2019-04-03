@@ -41,7 +41,7 @@ gulp.task('templates', () => (
 			asset: 'dist',
 			exts: ['js', 'css']
 		})))
-		.pipe(rename({dirname: '.'}))
+		.pipe(rename({dirname: '.', extname: '.php'}))
 		.pipe(gulp.dest('dist'))
 ));
 
