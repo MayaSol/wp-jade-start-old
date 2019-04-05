@@ -34,6 +34,6 @@ gulp.task('build', () => (
 gulp.task('deploy', () => (
 	runSequence(
 		'clean:remote',
-		'deploy'
+		'deploy-copy'
 	)
 ));

@@ -5,7 +5,7 @@ import gulp from 'gulp';
 //	gulp.src(['dist/**/*', '!dist/robots.txt']).pipe(ghpages({branch: 'dist'}))
 //));
 
-gulp.task('deploy', () => (
+gulp.task('deploy-copy', () => (
 	gulp.src(['dist/**/*']).pipe(gulp.dest('/var/www/aero/wp-content/themes/wp-jade-start/'))
 ));
 
