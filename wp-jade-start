@@ -14,7 +14,9 @@ tasks/deploy.js
 - Удалять все из Dist перед новой сборкой и при Деплое
 	clean.js
 	npm install --save-dev del
-
+------------------
+ - Поменять шаблонизатор на gulp-pug, pug-php-filter
+ - Change template files extension on .pug
 
 
 
@@ -25,3 +27,6 @@ tasks/deploy.js
 11:59 - index.php
 
 12:12 - index.php
+
+---------------------------------------
+
