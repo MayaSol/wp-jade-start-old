@@ -11,7 +11,7 @@ head
 	link(rel="pingback" href!="<?php bloginfo( 'pingback_url' ); ?>")
 	<?php wp_head(); ?>
 
-body <?php body_class(); ?>
+|<body <?php body_class(); ?>>
 
-	header.site-header
-		+main-menu()
+header.site-header
+	+main-menu()
