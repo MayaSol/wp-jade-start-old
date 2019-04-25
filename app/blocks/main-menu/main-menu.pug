@@ -18,6 +18,7 @@ mixin main-menu(menuMods)
 		console.log(menuClass);
 
 	nav.main-menu(class=menuClass)&attributes(attributes)
+		button.menu-toggle(aria-controls='top-menu' aria-expanded='false')
 		:php
 			wp_nav_menu( array(
 			'theme_location' => 'main-menu-top',
