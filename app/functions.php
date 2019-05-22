@@ -159,6 +159,11 @@ require get_template_directory() . '/inc/custom-menu.php';
 */
 require get_template_directory() . '/inc/icon-functions.php';
 
+/**
+* Custom post types
+*/
+require get_template_directory() . '/inc/custom-post-types.php';
+
 
 /**
  * Load Jetpack compatibility file.
