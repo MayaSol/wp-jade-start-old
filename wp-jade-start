@@ -1,3 +1,6 @@
+admin
+3@R3JdRI7O2yAsL8Vh
+---------------------------
 tasks/deploy.js
  - указать папку, в которую копируется содержимое dist при npm run deploy
 
