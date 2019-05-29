@@ -9,7 +9,14 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php
+/* Добавление класса в аргумент post_class() для определенного типа поста */
+  if ($post->post_name = 'post_name') {
+    $post_class = 'post_class';
+  }
+?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class($post_class); ?>>
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
