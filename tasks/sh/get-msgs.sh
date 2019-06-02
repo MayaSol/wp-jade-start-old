@@ -1,3 +1,8 @@
-# Создает .po файл, путь и имя которого указаны в $1 и передает туда строки для перевода из файлов, пеерчисленных в php-list
-touch $1
-xgettext -j -f tmp/php-list --keyword=__ --keyword=_e -o $1
+# $1 - имя файла .po в видe ru_RU, en_GB ...
+# $2 - путь к файлу .po
+filePO="$2$1.po"
+touch $filePO
+xgettext -j -f tmp/php-list --from-code=utf-8 --keyword=__ --keyword=_e --keyword=_n --keyword=_x  -o $filePO
+sed -i 's/charset=CHARSET/charset=UTF-8/g' $filePO
+fileMO="$2$1.mo"
+msgfmt -o $fileMO $filePO

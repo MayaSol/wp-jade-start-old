@@ -17,7 +17,7 @@ import gfi from 'gulp-file-insert';
 const isDebug = process.env.NODE_ENV !== 'production';
 
 gulp.task('styles', () => (
-	gulp.src('app/styles/*.styl')
+	gulp.src('app/styles/app.styl')
 		.pipe(plumber({errorHandler: errorHandler(`Error in \'styles\' task`)}))
 		.pipe(gulpIf(isDebug, sourcemaps.init()))
 		.pipe(stylus({

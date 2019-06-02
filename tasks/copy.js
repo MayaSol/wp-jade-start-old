@@ -27,7 +27,7 @@ gulp.task('copy:resources', () => (
 
 gulp.task('copy:php', () => (
 	config.templates.map(function(folder) {
-		gulp.src(['app/' + folder + '**/*.php','!app/blocks/**/*'])
+		gulp.src(['app/' + folder + '**/*.php','!app/blocks/**/*','!app/~aux/**/*'])
 		.pipe(gulp.dest('dist/' + folder))
 	})
 ));
